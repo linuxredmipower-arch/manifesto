@@ -51,7 +51,9 @@
   <project path="device/qcom/sepolicy-legacy-um" name="platform_device_qcom_sepolicy-legacy-um" remote="miku" revision="Udon" />
   <project path="device/qcom/sepolicy_vndr-legacy-um" name="platform_device_qcom_sepolicy_vndr-legacy-um" remote="miku" />
   <project path="device/qcom/sepolicy_vndr/sm8450" name="platform_device_qcom_sepolicy_vndr_sm8450" remote="miku" />
-  <project path="device/miku/sepolicy" name="platform_device_miku_sepolicy" remote="miku" />
+  <!-- A15 标记 (2026-08-12): marble 适配仓库 → linuxredmipower-arch fork @ miku-a15
+       含 LOS HAL domain 恢复等 12 文件 sepolicy 修复；A16 迁移时另建 miku-a16 -->
+  <project path="device/miku/sepolicy" name="platform_device_miku_sepolicy" remote="miku" fetch="https://github.com/linuxredmipower-arch" revision="miku-a15" />
   <project path="vendor/qcom/perf" name="platform_vendor_qcom_perf" remote="miku" />
 
   <!-- External -->
@@ -102,7 +104,8 @@
   <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" remote="miku" revision="snowland" clone-depth="1" />
 
   <!-- General -->
-  <project path="vendor/miku" name="platform_vendor_miku" remote="miku" />
+  <!-- A15 标记 (2026-08-12): kernel.mk DTBS_TECHPACK 修复 + toybox 兼容 → fork @ miku-a15 -->
+  <project path="vendor/miku" name="platform_vendor_miku" remote="miku" fetch="https://github.com/linuxredmipower-arch" revision="miku-a15" />
   <project path="vendor/settings" name="platform_vendor_settings" remote="miku" revision="snowland" />
 
   <!-- HALS -->
