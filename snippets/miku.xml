@@ -10,6 +10,12 @@
 	   revision="vic"
 	   fetch="https://gitlab.com/MindTheGapps" />
 
+  <!-- A16 (2026-09-27): marble 适配仓库 fork remote (sepolicy/vendor_miku 用独立 remote,
+       避免 project 级 fetch 覆盖在旧 .repo 残留配置下失效) -->
+  <remote  name="miku-fork"
+	   revision="miku-a16"
+	   fetch="https://github.com/linuxredmipower-arch" />
+
   <!-- Art -->
   <project path="art" name="platform_art" remote="miku" />
 
@@ -54,7 +60,7 @@
   <project path="device/qcom/sepolicy_vndr/sm8550" name="platform_device_qcom_sepolicy_vndr_sm8550" remote="miku" />
   <!-- A16 标记 (2026-09-26): marble 适配仓库 → linuxredmipower-arch fork @ miku-a16
        12 文件 LOS HAL sepolicy 修复按需移植 -->
-  <project path="device/miku/sepolicy" name="platform_device_miku_sepolicy" remote="miku" fetch="https://github.com/linuxredmipower-arch" revision="miku-a16" />
+  <project path="device/miku/sepolicy" name="platform_device_miku_sepolicy" remote="miku-fork" />
   <project path="vendor/qcom/perf" name="platform_vendor_qcom_perf" remote="miku" revision="Blooming" />
 
   <!-- External -->
@@ -109,7 +115,7 @@
 
   <!-- General -->
   <!-- A16 标记 (2026-09-26): kernel.mk DTBS_TECHPACK + toybox 兼容按需移植 → fork @ miku-a16 -->
-  <project path="vendor/miku" name="platform_vendor_miku" remote="miku" fetch="https://github.com/linuxredmipower-arch" revision="miku-a16" />
+  <project path="vendor/miku" name="platform_vendor_miku" remote="miku-fork" />
   <project path="vendor/settings" name="platform_vendor_settings" remote="miku" revision="snowland" />
 
   <!-- HALS -->
